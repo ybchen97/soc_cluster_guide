@@ -1,3 +1,4 @@
+# Guide to Using GPUs & PyTorch on SOC Compute Cluster
 ## Prerequisites
 1. Be a student under School of Computing (SoC) at the National University of Singapore.
 2. Have an SoC account. If you don't, you can [apply for one here.](https://mysoc.nus.edu.sg/~newacct/)
@@ -54,7 +55,7 @@ conda activate myenv
 
 Then:
 1. Run `nvidia-smi` to check the installed nvidia driver version.
-	![[Nvidia driver version.png]]
+	![](Nvidia driver version.png)
 2. Check the [compatibility of CUDA versions](https://docs.nvidia.com/deploy/cuda-compatibility/) based on the installed nvidia driver. Based on the driver version shown in the image above (460.91.03), it is compatible with CUDA versions 11.X.
 3. Go to the [PyTorch website](https://pytorch.org/get-started/locally/) and install the correct version of PyTorch along with the CUDA toolkit using conda. Click on the "Previous PyTorch Versions" tab to install older PyTorch versions if the latest version does not suit your usage.
 	```shell
@@ -82,10 +83,13 @@ cuda:0
 Finished Training       
 ```
 Note that you can also view the GPU usage of your current job by calling `nvidia-smi` as well:
-![[gpu usage.png]]
+![](gpu usage.png)
+
 ## Other useful tips
+
 ### Use tmux to run multiple terminal sessions
 [Tmux cheatsheet](https://tmuxcheatsheet.com/)
+
 Since it is useful to monitor the GPU memory usage (and also check if other people are using the GPUs in the current node), I like to open a tmux session and run my training job in one pane while running `nvidia-smi` in another
 1. Create a new tmux session called train
 	```shell
@@ -104,8 +108,8 @@ Since it is useful to monitor the GPU memory usage (and also check if other peop
 	```
 	
 Once done, it'll look something like this:
-![[tmux.png]]
+![](tmux.png)
 
 ### Port-forwarding for tensorboard or jupyter notebook
-[Running Tensorboard on remote server](https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server)
-[Running Jupyter Notebook on a remote server](https://docs.anaconda.com/anaconda/user-guide/tasks/remote-jupyter-notebook/)
+- [Running Tensorboard on remote server](https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server)
+- [Running Jupyter Notebook on a remote server](https://docs.anaconda.com/anaconda/user-guide/tasks/remote-jupyter-notebook/)
