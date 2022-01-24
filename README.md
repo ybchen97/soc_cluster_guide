@@ -55,7 +55,7 @@ conda activate myenv
 
 Then:
 1. Run `nvidia-smi` to check the installed nvidia driver version.
-	![](Nvidia driver version.png)
+	![](nvidia_driver_version.png)
 2. Check the [compatibility of CUDA versions](https://docs.nvidia.com/deploy/cuda-compatibility/) based on the installed nvidia driver. Based on the driver version shown in the image above (460.91.03), it is compatible with CUDA versions 11.X.
 3. Go to the [PyTorch website](https://pytorch.org/get-started/locally/) and install the correct version of PyTorch along with the CUDA toolkit using conda. Click on the "Previous PyTorch Versions" tab to install older PyTorch versions if the latest version does not suit your usage.
 	```shell
@@ -83,7 +83,7 @@ cuda:0
 Finished Training       
 ```
 Note that you can also view the GPU usage of your current job by calling `nvidia-smi` as well:
-![](gpu usage.png)
+![](gpu_usage.png)
 
 ## Other useful tips
 
